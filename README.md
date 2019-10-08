@@ -127,7 +127,7 @@ In this case you make your own class inheriting from ```Gamepad.Gamepad``` in th
 ## RockyBorg example - ```rockyJoy.py```
 Here we have an actual use of the Gamepad library, controlling a [RockyBorg](https://www.piborg.org/rockyborg-white) robot :)
 
-It works exactly like the ```rbJoystick.py``` example script, but with the addition of a button to end the script.
+It works exactly like the old Pygame version of the ```rbJoystick.py``` example script, but with the addition of a button to end the script.
 
 The controller and button layout is all specified towards the top of the script and the standard [RockyBorg library](https://github.com/piborg/rockyborg) is used to control the motors and servo.
 
