@@ -50,6 +50,8 @@ This script is not run directly, instead it is read by ```Gamepad.py``` so that 
 ## Polling mode - ```PollingExample.py```
 The polling mode is probably the simplest and uses the Gamepad library to decode controller events one at a time.
 
+![Polling flowchart](Diagrams/Polling.svg)
+
 It works by repeatedly calling the ```getNextEvent()``` function to get the next update from the controller in the order they occurred.  Each call returns three things:
 
 1. The event type.  This is either ```'BUTTON'``` for button presses or ```'AXIS'``` for axis / joystick movements.
@@ -62,6 +64,8 @@ Polling mode cannot be used at the same time as the asynchronous or event modes 
 
 ## Asynchronous mode - ```AsyncExample.py```
 Asynchronous mode works by reading the controller events in a background thread and updating the objects state to match the controller.
+
+![Asynchronous flowchart](Diagrams/Asynchronous.svg)
 
 It is started by calling the ```startBackgroundUpdates()``` function and should be stopped at the end of your script by calling the ```disconnect()``` function.
 
@@ -79,6 +83,8 @@ Asynchronous mode cannot be used at the same time as the polling mode as it read
 
 ## Event mode - ```EventExample.py```
 Event mode works by reading the controller events in a background thread and calling functions in your script when changes occur.
+
+![Event flowchart](Diagrams/Event.svg)
 
 It is started by calling the ```startBackgroundUpdates()``` function and should be stopped at the end of your script by calling the ```disconnect()``` function.  The ```isConnected()``` function will return ```False``` if the controller is disconnected while running.
 
@@ -105,6 +111,8 @@ Event mode cannot be used at the same time as the polling mode as it reads the c
 
 ## Asynchronous and event mode - ```AsyncAndEventExample.py```
 This is not really a mode, but an example of how the asynchronous and event modes can be used at the same time.  This is generally my preferred option as event mode is often easier to understand for button presses and asynchronous mode works well with axis / joystick movements.
+
+![Asynchronous and event flowchart](Diagrams/Asynchronous-and-event.svg)
 
 The example script here is really a hybrid between the ```AsyncExample.py``` and ```EventExample.py``` examples.  Button callbacks are registered in the event style, then the loop only checks one button and the joystick positions.
 
