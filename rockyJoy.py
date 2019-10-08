@@ -62,7 +62,6 @@ def exitButtonPressed():
 
 # Wait for a connection
 RB.MotorsOff()
-RB.SetLedShowBattery(False)
 RB.SetLed(True)
 waitingToggle = True
 if not Gamepad.available():
