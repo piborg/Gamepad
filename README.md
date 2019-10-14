@@ -1,4 +1,7 @@
 # PiBorg Gamepad Library
+
+![Polling flowchart](Diagrams/gamepad-logo.svg)
+
 The Gamepad library provides a simple way of getting inputs from joysticks, gamepads, and other game controllers.
 
 Both buttons and axes / joysticks can be referenced by names as well as their raw index numbers.  These can be easily customised and new controllers can easily be added as well.
