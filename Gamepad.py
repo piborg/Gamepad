@@ -569,16 +569,24 @@ if __name__ == "__main__":
     except NameError:
         pass
 
+    # ANSI colour code sequences
+    GREEN = '\033[0;32m'
+    CYAN = '\033[0;36m'
+    BLUE = '\033[1;34m'
+    RESET = '\033[0m'
+
     # Ask for the gamepad to use
     print('Gamepad axis and button events...')
     print('Press CTRL+C to exit')
     print('')
     print('Available device names:')
+    formatString = '    ' + GREEN + '%s' + RESET + ' - ' + CYAN + '%s' + RESET
     for device in deviceNames:
-        print('    %s - %s' % (device, controllerDict[device.upper()].fullName))
+        print(formatString % (device, controllerDict[device.upper()].fullName))
     print('')
     print('What device name are you using (leave blank if not in the list)')
-    device = input('? ').strip().upper()
+    device = input('? ' + GREEN).strip().upper()
+    print(RESET)
 
     # Wait for a connection
     if not available():
@@ -602,5 +610,7 @@ if __name__ == "__main__":
 
     # Display the event messages as they arrive
     while True:
-        event = gamepad.getNextEvent()
-        print(event)
+        eventType, index, value = gamepad.getNextEvent()
+        print(BLUE + eventType + RESET + ',\t  ' + 
+              GREEN + str(index) + RESET + ',\t' + 
+              CYAN + str(value) + RESET)
