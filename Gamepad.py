@@ -611,6 +611,6 @@ if __name__ == "__main__":
     # Display the event messages as they arrive
     while True:
         eventType, index, value = gamepad.getNextEvent()
-        print(BLUE + eventType + RESET + ',\t  ' + 
-              GREEN + str(index) + RESET + ',\t' + 
+        print(BLUE + eventType + RESET + ',\t  ' +
+              GREEN + str(index) + RESET + ',\t' +
               CYAN + str(value) + RESET)
