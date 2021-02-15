@@ -241,3 +241,38 @@ class example(Gamepad):
             2: 'BUTTON2'
         }
         self._setupReverseMaps()
+
+class STEAM(Gamepad):
+    fullName = 'Steam controller'
+
+    def __init__(self, joystickNumber = 0):
+        Gamepad.__init__(self, joystickNumber)
+        self.axisNames = {
+            0: 'JOY-Y',
+            1: 'JOY-X',
+            2: 'TPR-Y',
+            3: 'TPR-X',
+            4: 'TPL-Y',
+            5: 'TPL-X',
+            6: 'DPAD-X',
+            7: 'DPAD-Y'
+        }
+        self.buttonNames = {
+            0:  'TPR CLICK',
+            1:  'TPL CLICK',
+            2:  'A',
+            3:  'B',
+            4:  'X',
+            5:  'Y',
+            6:  'L2',
+            7:  'R2',
+            8:  'L1',
+            9:  'R1',
+            10: 'SELECT',
+            11: 'START',
+            12: 'STEAM',
+            13: 'JOY CLICK',
+            15: 'LG',
+            16: 'RG'
+        }
+        self._setupReverseMaps()
