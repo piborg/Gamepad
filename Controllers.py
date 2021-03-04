@@ -215,6 +215,43 @@ class XboxONE(Gamepad):
                 
         }
         self._setupReverseMaps()
+        
+class Steam(Gamepad):
+    fullName = 'Steam controller'
+
+    def __init__(self, joystickNumber = 0):
+        Gamepad.__init__(self, joystickNumber)
+        self.axisNames = {
+            0: 'AS -Y', #Analog Stick Up/Down
+            1: 'AS -X', #Analog Stick Up/Down
+            2: 'RTP -X', #Right Track Pad Left/Right
+            3: 'RTP -Y', #Right Track Pad Up/Down
+            4: 'LTP -Y', #Left Track Pad Up/Down
+            5: 'LTP -X' #Left Track Pad Left/Right
+        }
+        self.buttonNames = {
+            0:  'LPTBUTTON', #Left TrackPad button
+            1:  'RTPBUTTON', #Right TrackPad button
+            2:  'A', #A Button
+            3:  'B', #B Button
+            4:  'X', #X Button
+            5:  'Y', #Y Button
+            6:  'LB', #Left Bumper
+            7:  'RB', #Right Bumper
+            8:  'LT', #Left Trigger
+            9:  'RT', #Right Trigger
+            10: 'SELECT', #Select Button <
+            11: 'START', #Start button >
+            12: 'HOME', #Steam Button
+            13: 'STICKBUTTON', #Analog Stick button
+            15: 'LG', #Left Grip
+            16: 'RG', #Right Grip
+            17: 'LTP -DUP', #Left TrackPad D-PAD Up
+            18: 'LTP -DDOWN', #Left TrackPad D-PAD Down
+            19: 'LTP -DLEFT', #Left TrackPad D-PAD Left
+            20: 'LTP -DRIGHT', #Left TrackPad D-PAD Right
+        }
+        self._setupReverseMaps()
 
 class MMP1251(Gamepad):
     fullName = "ModMyPi Raspberry Pi Wireless USB Gamepad"
