@@ -222,12 +222,14 @@ class Steam(Gamepad):
     def __init__(self, joystickNumber = 0):
         Gamepad.__init__(self, joystickNumber)
         self.axisNames = {
-            0: 'AS -Y', #Analog Stick Up/Down
-            1: 'AS -X', #Analog Stick Up/Down
+            0: 'AS -X', #Analog Stick Left/Right
+            1: 'AS -Y', #Analog Stick Up/Down
             2: 'RTP -X', #Right Track Pad Left/Right
             3: 'RTP -Y', #Right Track Pad Up/Down
             4: 'LTP -Y', #Left Track Pad Up/Down
-            5: 'LTP -X' #Left Track Pad Left/Right
+            5: 'LTP -X', #Left Track Pad Left/Right
+            6: 'RTA', #Right Trigger Axis
+            7: 'LTA' #Left Trigger Axis
         }
         self.buttonNames = {
             0:  'LPTBUTTON', #Left TrackPad button
