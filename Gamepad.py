@@ -70,7 +70,7 @@ class Gamepad:
                     time.sleep(0.5)
                 else:
                     raise IOError('Could not open gamepad %s: %s' % (self.joystickNumber, str(e)))
-        self.eventSize = struct.calcsize('LhBB')
+        self.eventSize = struct.calcsize('IhBB')
         self.pressedMap = {}
         self.wasPressedMap = {}
         self.wasReleasedMap = {}
@@ -115,7 +115,7 @@ class Gamepad:
                 self.connected = False
                 raise IOError('Gamepad %s disconnected' % self.joystickNumber)
             else:
-                return struct.unpack('LhBB', rawEvent)
+                return struct.unpack('IhBB', rawEvent)
         else:
             raise IOError('Gamepad has been disconnected')
 
